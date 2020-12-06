@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="adventure, canyon, zipline, sup, kayak, abseiling, viewpoint, hiking">
+    <title>Maple Adventure - 2020</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/tailwind.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+    <link rel="icon" type="image/ico" href="./images/logo.webp" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header
+      id="home"
+      class="relative h-screen flex flex-col justify-center items-center
+      "
+    >
+      <!-- HERO IMG COVER -->
+      <div data-aos="zoom-in"
+        class="hero-img object-cover absolute top-0 opacity-70 w-screen h-screen"
+      ></div>
+
+      <nav data-aos="fade-down" data-aos-once="true"
+        class="absolute w-full top-0 left-0 bg-gray-800 flex justify-between items-center z-50
+        "
+      >
+        <img
+          loading="lazy"
+          class="logo xl:ml-52 ml-10 rounded-full h-20"
+          src="./images/logo.webp"
+          alt="Web site logo"
+        />
+
+        <ul class="md:flex hidden items-center text-white">
+          <li class="">
+            <a
+              class="hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
+              href="#home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
+              href="#about-us"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
+              href="#activities"
+              >Activities</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
+              href="#gallery"
+              >Gallerty</a
+            >
+          </li>
+        </ul>
+        <div class="xl:mr-52  mr-10">
+          <a
+            class="py-1 px-3 text-2xl font-semibold bg-gray-500 rounded xl:block hidden text-center text-white hover:bg-gray-400"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+        <button class="menu block md:hidden mr-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </button>
+      </nav>
+
+      <nav id="mobile-menu" class="absolute top-20 w-full hidden bg-gray-800 text-white text-2xl text-center z-50">
+        <ul>
+          <li class="hover:bg-gray-400 py-2"><a href="#home">Home</a></li>
+          <li class="hover:bg-gray-400 py-2"><a href="#about-us">About Us</a></li>
+          <li class="hover:bg-gray-400 py-2"><a href="#activities">Activities</a></li>
+          <li class="hover:bg-gray-400 py-2"><a href="#gallery">Gallery</a></li>
+          <li class="hover:bg-gray-400 py-2"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div data-aos="zoom-in-up" data-aos-duration="1000" class="w-full flex flex-col items-center overlay">
+        <h1 class="font-bold py-5 text-white z-10 lg:text-8xl text-5xl text-center">
+          Maple Adventure
+        </h1>
+      </div>
+
+      <a
+        data-aos="zoom-out-down"
+        data-aos-duration="500"
+        href="#activities"
+        class="hero-btn px-16 py-3 rounded text-white z-10 bottom-52 text-3xl font-semibold absolute ease-out duration-700"
+        >what we do</a
+      >
+
+      <svg
+        class="absolute bottom-0 animate-bounce"
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-arrow-bottom-tail"
+        width="68"
+        height="68"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#009988"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <line x1="12" y1="6" x2="12" y2="21" />
+        <path d="M9 18l3 3l3 -3" />
+        <path d="M9 3l3 3l3 -3" />
+      </svg>
+      <!-- social media icons -->
+      <div class="absolute right-0 md:pr-14 pl-8 md:bottom-0 md:block hidden text-center">
+        <ul class="flex z-10 justify-between text-center">
+          <li>
+            <a class="px-2" href="instagram">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-brand-instagram"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#fff"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <rect x="4" y="4" width="16" height="16" rx="4" />
+                <circle cx="12" cy="12" r="3" />
+                <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="px-4" href="facebook">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-brand-facebook"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#fff"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="px-4" href="instagram"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-brand-linkedin"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#fff"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <line x1="8" y1="11" x2="8" y2="16" />
+                <line x1="8" y1="8" x2="8" y2="8.01" />
+                <line x1="12" y1="16" x2="12" y2="11" />
+                <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Main section -->
+    <main class="m-auto mt-20 z-50">
+      <!-- ABOUT -->
+      <section id="about-us" class="md:container p-5 md:w-6/12 m-auto">
+        <h2
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          class="text-5xl text-gray-500 border-b-2 pb-3 text-center mb-12 mt-20"
+        >
+          who we are
+        </h2>
+        <p data-aos="fade-right" data-aos-duration="1000"  class="text-xl">
+          We are the union for outdoor sports, specialized in tailored holidays for groups and individuals. We also offer services for groups, schools, and enterprises who look for a weekend or several days of activities in nature.
+        </p>
+      </section>
+      
+      <!-- ACTIVITIES -->
+      <section class="w-screen activities">
+        <section
+          id="activities"
+          class="text-white mt-20 md:w-8/12 p-5 lg:w-10/12 xl:w-6/12 m-auto pb-52"
+        >
+          <h2 data-aos="zoom-in-up" data-aos-duration="800" class="pt-48 text-5xl border-b-2 pb-3 text-center mb-12">
+            what we do
+          </h2>
+          <div class="box md:flex md:flex-col items-center">
+            <div data-aos="fade-left" data-aos-duration="1000" class="flex items-center flex-col md:flex-row">
+              <img loading="lazy" src="./images/canyon.webp" alt="canyoning" class="md:order-1"/>
+              <div class="flex flex-col pt-10 pb-10 md:p-10">
+                <h3 class="text-4xl text-center mb-5">Canyoning</h3>
+                <p class="px-5">
+                  Pass through the most famous canyons of western Serbia, which are widely known for their beauty and the experience it offers.
+                </p>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-duration="1000" class="flex items-center flex-col md:flex-row">
+              <img width="390" loading="lazy" src="./images/abseiling.webp" alt="abseiling"/>
+              <div class="flex flex-col pt-10 pb-10 md:p-10">
+                <h3 class="text-4xl text-center mb-5">Abseiling</h3>
+                <p class="">
+                  Try yourself in one of the most extreme activities that maple-adventure offers, and that is Abseiling. With our best and most experienced guides you will experience an amazing experience that will never be forgotten.
+                </p>
+              </div>
+            </div>
+            <div data-aos="fade-left" data-aos-duration="1000" class="flex items-center flex-col md:flex-row">
+              <img
+                loading="lazy"
+                src="./images/sup&kayak.webp"
+                alt="sup&kayak"
+                class="md:order-1"
+              />
+              <div class="flex flex-col pt-10 pb-10 md:p-10">
+                <h3 class="text-4xl text-center mb-5">Sup & Kayak</h3>
+                <p>
+                  Stand Up Paddleboarding is the hottest new water sport and an exciting way to spend an active day on the river. SUP trips are recommended for any adventure seeker looking for an exciting workout or just a thrilling way to spend the day.
+                </p>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-duration="1000" class="flex items-center flex-col md:flex-row">
+              <img
+                loading="lazy"
+                class="zip"
+                src="./images/zip.webp"
+                alt="zipline"
+              />
+              <div class="flex flex-col pt-10 pb-10 md:p-10">
+                <h3 class="text-4xl text-center mb-5">Zipline</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit
+                  quia aliquam accusantium quasi esse repellendus tenetur
+                  dolorem quos voluptas fugiat id deserunt, fugit vero qui iure
+                  minima consequuntur explicabo aut.
+                </p>
+              </div>
+            </div>
+            <div data-aos="fade-left" data-aos-duration="1000" class="flex items-center flex-col md:flex-row">
+              <img
+                loading="lazy"
+                src="./images/banjska (Custom).webp"
+                alt="viewpoint"
+                class="md:order-1"
+              />
+              <div class="flex flex-col pt-10 pb-10 md:p-10">
+                <h3 class="text-4xl text-center mb-5">Viewpoint</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit
+                  quia aliquam accusantium quasi esse repellendus tenetur
+                  dolorem quos voluptas fugiat id deserunt, fugit vero qui iure
+                  minima consequuntur explicabo aut.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="w-full bg-white mt-52">
+        <section id="gallery" class="md:container w-12/12 m-auto">
+         
+          </h2>
+          <div
+            class="grid grid-cols-4 gap-2 max-h-screen overflow-y-scroll w-full"
+          >
+            <figure class="w-full h-full col-start-3 col-end-5">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-1.webp"
+                alt=""
+              />
+            </figure>
+            <figure class="w-full h-full row-start-1 row-end-3 col-span-2">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-2.webp"
+                alt=""
+              />
+            </figure>
+            <figure class="w-full h-full col-start-3 col-end-5">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-3.webp"
+                alt=""
+              />
+            </figure>
+            <figure class="w-full h-full row-start-5 row-end-6">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-4.webp"
+                alt=""
+              />
+            </figure>
+            <figure class="w-full h-full col-start-1 col-end-3">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-5.webp"
+                alt=""
+              />
+            </figure>
+            <figure class="w-full h-full col-start-1 col-end-3">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-6.webp"
+                alt=""
+              />
+            </figure>
+            <figure
+              class="w-full h-full row-start-3 row-end-5 col-start-3 col-end-5"
+            >
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-7.webp"
+                alt=""
+              />
+            </figure>
+            <figure class="w-full h-full col-start-2 col-end-5">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-8.webp"
+                alt=""
+              />
+            </figure>
+            <figure class="w-full h-full col-start-1 col-end-3">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-9.webp"
+                alt=""
+              />
+            </figure>
+            <figure class="w-full h-full col-start-3 col-end-5">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-12.webp"
+                alt=""
+              />
+            </figure>
+            <figure class="w-full h-full col-start-1 col-end-5">
+              <img
+                class="object-cover object-center w-full h-full"
+                src="./images/gallery/img-10.webp"
+                alt=""
+              />
+            </figure>
+          </div>
+        </section>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="bg-green-400 text-white mt-32 pl-6 pr-6 md:pl-16 md:pr-16 pb-24">
+        <section class="md:container m-auto w-full h-full">
+          <h2 class="text-center text-4xl border-b-2 pb-3 pt-12">get in touch</h2>
+          <div class="flex flex-col md:flex-row justify-center items-center w-full h-full mt-24">
+            <ul class=" flex flex-col justify-center mr-12 ml-12 md:ml-0 h-full">
+              <li class="text-2xl mb-4">E-mail:<p class="pl-4 border-b-2  text-xl">info.maple.adventure@gmail.com</p></li>
+              <li class="text-2xl mb-4">Address: <p class="pl-4 border-b-2  text-xl">Petra Kočića 18, Bajina Bašta</p></li>
+              <li class="text-2xl mb-4">Phone: <p class="pl-4 border-b-2  text-xl">+381 648475257</p></li>
+              <li class="text-2xl mb-4">Viber: <p class="pl-4 border-b-2 text-xl">+381 69668767</p></li>
+            </ul>
+            <div id="map" class="w-10/12 md:w-8/12 mt-5 md:mt-0" style="height: 40vh;"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center p-12 bg-gray-700">
+      <p class="text-2xl text-white">&copy; 2020-Maple Adventure</p>
+      <ul class="flex justify-center mt-5">
+        <li><a href="https://www.instagram.com/maple.adventure/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <rect x="4" y="4" width="16" height="16" rx="4" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+        </svg></a></li>
+        <li><a href="https://www.facebook.com/Maple-Adventure-106836347590279/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+        </svg> </a></li>
+        <li><a href="https://www.linkedin.com/in/maple-adventure-0181641ab"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <rect x="4" y="4" width="16" height="16" rx="2" />
+          <line x1="8" y1="11" x2="8" y2="16" />
+          <line x1="8" y1="8" x2="8" y2="8.01" />
+          <line x1="12" y1="16" x2="12" y2="11" />
+          <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+        </svg></a></li>
+      </ul>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <script>
+
+const mobileMenu = document.querySelector("#mobile-menu");
+const menu = document.querySelector(".menu");
+
+menu.addEventListener("click", () => {
+  if (mobileMenu.style.display === "block") {
+    mobileMenu.style.display = "none";
+  } else {
+    mobileMenu.style.display = "block";
+  }
+});
+
+
+
+
+
+    const map = L.map("map").setView([43.970, 19.564], 13);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+L.marker([43.970, 19.564])
+  .addTo(map)
+  .bindPopup("We are here. 👍")
+  .openPopup();
+
+  AOS.init()
+  </script>
+  </body>
+</html>

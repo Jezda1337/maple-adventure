@@ -1,0 +1,65 @@
+body,
+html {
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-img {
+  background: url("../images/hero-img.webp") center center / cover no-repeat
+    fixed;
+}
+
+/* .box > div:nth-child(odd) img {
+  order: 1;
+} */
+
+.zip {
+  width: 390px;
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* .gallery ~ div {
+  height: 147px;
+}
+
+#mobile-menu {
+  background-color: rgba(0, 0, 0, 0.75);
+} */
+
+.overlay {
+  background-color: rgb(209 73 72 / 44%);
+  background-attachment: scroll;
+}
+
+.hero-btn {
+  background-color: #d7606196;
+}
+.hero-btn:hover {
+  background-color: #d76062;
+}
+
+svg {
+  stroke: #d7606196;
+  transition: 0.3s linear;
+}
+
+svg:hover {
+  stroke: #fff;
+  transform: scale(1.1);
+}
+
+.activities {
+  background-color: #232323;
+}
