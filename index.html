@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,7 @@
   crossorigin=""/>
     <link rel="icon" type="image/ico" href="./images/logo.webp" />
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <!-- Header -->
     <header
       id="home"
@@ -442,12 +442,7 @@ menu.addEventListener("click", () => {
     mobileMenu.style.display = "block";
   }
 });
-
-
-
-
-
-    const map = L.map("map").setView([43.970, 19.564], 13);
+  const map = L.map("map").setView([43.970, 19.564], 13);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution:

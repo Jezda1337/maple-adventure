@@ -19,24 +19,12 @@ html {
     fixed;
 }
 
-/* .box > div:nth-child(odd) img {
-  order: 1;
-} */
-
 .zip {
   width: 390px;
   height: 260px;
   object-fit: cover;
   object-position: top;
 }
-
-/* .gallery ~ div {
-  height: 147px;
-}
-
-#mobile-menu {
-  background-color: rgba(0, 0, 0, 0.75);
-} */
 
 .overlay {
   background-color: rgb(209 73 72 / 44%);
