@@ -31,49 +31,57 @@
       >
         <img
           loading="lazy"
-          class="logo xl:ml-52 ml-10 rounded-full h-20"
+          class="logo xl:ml-52 ml-10 h-20"
           src="./images/logo.webp"
           alt="Web site logo"
         />
 
-        <ul class="md:flex hidden items-center text-white">
-          <li class="">
+        <ul class="md:flex hidden items-center text-white mr-52">
+          <li>
             <a
-              class="hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
+              class="transition duration-300 ease-linear hover:text-red-800 hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
               href="#home"
               >Home</a
             >
           </li>
           <li>
             <a
-              class="hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
+              class="transition duration-300 ease-linear hover:text-red-800 hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
               href="#about-us"
               >About Us</a
             >
           </li>
           <li>
             <a
-              class="hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
+              class="transition duration-300 ease-linear hover:text-red-800 hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
               href="#activities"
               >Activities</a
             >
           </li>
           <li>
             <a
-              class="hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
+              class="transition duration-300 ease-linear hover:text-red-800 hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
               href="#gallery"
               >Gallerty</a
             >
           </li>
+
+          <li>
+            <a
+              class="transition duration-300 ease-linear hover:text-red-800 hover:bg-gray-400 px-5 py-2 text-2xl font-semibold"
+              href="#gallery"
+              >Contact</a
+            >
+          </li>
         </ul>
-        <div class="xl:mr-52  mr-10">
+        <!-- <div class="xl:mr-52  mr-10">
           <a
             class="py-1 px-3 text-2xl font-semibold bg-gray-500 rounded xl:block hidden text-center text-white hover:bg-gray-400"
             href="#contact"
             >Contact</a
           >
-        </div>
-        <button class="menu block md:hidden mr-5">
+        </div> -->
+        <button class="menu block md:hidden mr-5 transition duration-300 ease-linear" >
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <line x1="4" y1="6" x2="20" y2="6" />
@@ -83,8 +91,8 @@
         </button>
       </nav>
 
-      <nav id="mobile-menu" class="absolute top-20 w-full hidden bg-gray-800 text-white text-2xl text-center z-50">
-        <ul>
+      <nav id="mobile-menu" class="md:hidden absolute top-20 w-full hidden bg-gray-800 text-white text-2xl text-center z-50">
+        <ul class="md:hidden">
           <li class="hover:bg-gray-400 py-2"><a href="#home">Home</a></li>
           <li class="hover:bg-gray-400 py-2"><a href="#about-us">About Us</a></li>
           <li class="hover:bg-gray-400 py-2"><a href="#activities">Activities</a></li>
